@@ -12,7 +12,6 @@ func (ctr *counter) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 }
 
 func main() {
-	ctr := new(counter)
-	http.Handle("/", ctr)
+	http.Handle("/count", new(counter))
 	http.ListenAndServe(":8080", nil)
 }
